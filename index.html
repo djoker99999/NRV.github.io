@@ -32,12 +32,7 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-        }
-
-        .background-animation img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            background: url('https://e0.pxfuel.com/wallpapers/631/610/desktop-wallpaper-lucky-unlucky-good-luck.jpg') center/cover no-repeat;
         }
 
         .game-container {
@@ -794,9 +789,7 @@
     </style>
 </head>
 <body>
-    <div class="background-animation">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnJiMnhxZGxpb2pjcWY3eWprMXBrczdqYmE1N2N5MnR4b2R5ejR3aCZlcD12MV9naWZzX3NlYXJjaCZjdT1n/qpzrAai4Hp6gw/giphy.gif" alt="Fond animé casino">
-    </div>
+    <div class="background-animation"></div>
 
     <div class="sound-controls">
         <button class="sound-btn" id="muteBtn">🔊 Musique</button>
@@ -976,6 +969,14 @@
             { value: 500, type: "jeton-500", name: "500" },
             { value: 1000, type: "jeton-1000", name: "1000" }
         ];
+
+        // Fonction pour générer un vrai nombre aléatoire entre 1 et 50
+        function getRandomNumber() {
+            // Utilisation de crypto.getRandomValues pour un vrai aléatoire
+            const array = new Uint32Array(1);
+            window.crypto.getRandomValues(array);
+            return (array[0] % 50) + 1;
+        }
         
         // Éléments DOM
         const gameBoard = document.getElementById('gameBoard');
@@ -1079,13 +1080,23 @@
             const interval = 100; // Change le nombre toutes les 100ms
             const steps = duration / interval;
             let step = 0;
+
+            // Générer le nombre gagnant à l'avance (vrai aléatoire)
+            const winningNumber = getRandomNumber();
+            console.log("Nombre gagnant prédéterminé:", winningNumber);
             
             const drawInterval = setInterval(() => {
-                // Calculer le prochain nombre (accélération vers la fin)
                 const progress = step / steps;
-                const speed = 1 + (progress * 10); // Accélération progressive
                 
-                currentNumber = (currentNumber + Math.floor(speed)) % 50 + 1;
+                // Pendant l'animation, afficher des nombres aléatoires
+                if (step < steps - 1) {
+                    // Pendant l'animation, utiliser un simple random pour l'affichage
+                    currentNumber = Math.floor(Math.random() * 50) + 1;
+                } else {
+                    // À la dernière étape, afficher le vrai nombre gagnant
+                    currentNumber = winningNumber;
+                }
+                
                 drawNumber.textContent = currentNumber;
                 
                 // Mettre en surbrillance la case correspondante
@@ -1095,7 +1106,7 @@
                 
                 if (step >= steps) {
                     clearInterval(drawInterval);
-                    finishDraw(currentNumber);
+                    finishDraw(winningNumber);
                 }
             }, interval);
         }
