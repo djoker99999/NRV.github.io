@@ -1583,6 +1583,9 @@
         
         // Afficher le résultat de victoire
         function displayWinResult(number, player, jetonValue) {
+            // Calculer les gains (5x la mise)
+            const gains = jetonValue * 5;
+            
             resultDiv.innerHTML = `
                 <h2>FÉLICITATIONS!</h2>
                 <div class="selected-square">
@@ -1601,7 +1604,7 @@
                         <div style="font-size: 1.4rem; font-weight: bold; color: #ffffff;">${player.name} GAGNANT!</div>
                     </div>
                 </div>
-                <p style="margin-top: 15px; color: #ffffff; font-size: 1.1rem;">Case ${number} sélectionnée - Gains: ${jetonValue * 10}€</p>
+                <p style="margin-top: 15px; color: #ffffff; font-size: 1.1rem;">Case ${number} sélectionnée - Gains: ${gains}€</p>
             `;
         }
         
@@ -1637,6 +1640,9 @@
         
         // Ajouter à l'historique
         function addToHistory(number, player, jetonValue) {
+            // Calculer les gains (5x la mise)
+            const gains = jetonValue * 5;
+            
             const historyItem = document.createElement('div');
             historyItem.className = 'history-item';
             historyItem.innerHTML = `
@@ -1646,7 +1652,7 @@
                     </div>
                     <div>
                         <div style="color: #ffffff; font-size: 1rem;">${player.name}</div>
-                        <div style="font-size: 0.9rem; color: #ffffff;">Case ${number} - Gains: ${jetonValue * 10}€</div>
+                        <div style="font-size: 0.9rem; color: #ffffff;">Case ${number} - Gains: ${gains}€</div>
                     </div>
                 </div>
             `;
@@ -1661,6 +1667,7 @@
                 number: number,
                 player: player,
                 jetonValue: jetonValue,
+                gains: gains,
                 timestamp: new Date().toLocaleTimeString()
             });
         }
