@@ -1,0 +1,1402 @@
+Aucun élément sélectionné 
+
+Aller au contenu
+Utiliser Gmail avec un lecteur d'écran
+Conversations
+moi
+(aucun objet)
+ 
+Pièce jointe :
+deepseek_html_20251016_ca2d8c.html
+moi
+(aucun objet)
+ 
+Pièce jointe :
+deepseek_html_20251016_d7e6d0.html
+20:25
+moi
+(aucun objet)
+ 
+Pièce jointe :
+deepseek_html_20251016_403c12.html
+20:17
+moi
+(aucun objet)
+ 
+Pièce jointe :
+deepseek_html_20251016_b61b1f-2.html
+18:42
+69 % sur 100 Go utilisés
+Conditions d'utilisation · Confidentialité · Règlement du programme
+Dernière activité sur le compte : il y a 0 minute
+Actuellement en cours d'utilisation depuis 3 autres endroits · Détails
+Nouveau message :
+Nouveau message
+RéduireFenêtre externeFermer
+À
+Objet
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino VIP - Jeu de Sélection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .background-animation img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .game-container {
+            background: transparent;
+            border-radius: 20px;
+            padding: 30px;
+            width: 95%;
+            max-width: 1200px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .casino-header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .casino-title {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ffffff, #f0f0f0, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            margin-bottom: 5px;
+        }
+
+        .casino-subtitle {
+            font-size: 1.2rem;
+            color: #ffffff;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .players-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .players-title {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .players-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .player {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .player-pawn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            border: 2px solid transparent;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .player-pawn img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .player-pawn.selected {
+            border: 3px solid #ffffff;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        .player-name {
+            font-size: 0.9rem;
+            text-align: center;
+            max-width: 80px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #ffffff;
+        }
+
+        .game-board-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .game-board {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            backdrop-filter: blur(3px);
+        }
+
+        .decorative-gif {
+            position: absolute;
+            z-index: 2;
+        }
+
+        .decorative-gif.left {
+            left: -80px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .decorative-gif.right {
+            right: -80px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .decorative-gif img {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+        }
+
+        .square {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            animation: float 3s ease-in-out infinite;
+            color: #ffffff;
+        }
+
+        .square:nth-child(odd) {
+            animation-delay: 0s;
+        }
+
+        .square:nth-child(even) {
+            animation-delay: 0.5s;
+        }
+
+        .square:nth-child(3n) {
+            animation-delay: 1s;
+        }
+
+        .square:nth-child(5n) {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0) scale(1);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            }
+            50% { 
+                transform: translateY(-5px) scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        .square.gold {
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+        }
+
+        .square.platinum {
+            background: linear-gradient(135deg, #e5e4e2, #b6b6b4);
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(229, 228, 226, 0.7);
+        }
+
+        .square:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.7);
+            z-index: 5;
+            animation-play-state: paused;
+        }
+
+        .square.selected {
+            transform: scale(1.15);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+            z-index: 10;
+            animation: pulse 1s infinite;
+        }
+
+        .square.highlight {
+            animation: highlight 0.5s ease-in-out;
+        }
+
+        .square.winning-gold {
+            animation: goldGlow 2s infinite alternate;
+        }
+
+        .square.winning-platinum {
+            animation: platinumGlow 2s infinite alternate;
+        }
+
+        @keyframes highlight {
+            0% { 
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+            }
+            50% { 
+                transform: scale(1.2);
+                box-shadow: 0 0 30px rgba(255, 255, 255, 1);
+            }
+            100% { 
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1.15); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1.15); }
+        }
+
+        @keyframes goldGlow {
+            0% { 
+                box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+                background: linear-gradient(135deg, #d4af37, #b8860b);
+            }
+            100% { 
+                box-shadow: 0 0 40px rgba(255, 255, 255, 1);
+                background: linear-gradient(135deg, #ffffff, #d4af37);
+            }
+        }
+
+        @keyframes platinumGlow {
+            0% { 
+                box-shadow: 0 0 20px rgba(229, 228, 226, 0.7);
+                background: linear-gradient(135deg, #e5e4e2, #b6b6b4);
+            }
+            100% { 
+                box-shadow: 0 0 40px rgba(255, 255, 255, 1);
+                background: linear-gradient(135deg, #ffffff, #e5e4e2);
+            }
+        }
+
+        .number {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .pawn-on-square {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            top: 5px;
+            right: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            overflow: hidden;
+        }
+
+        .pawn-on-square img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #8b0000, #b22222);
+            color: #ffffff;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: 1px solid #ffffff;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+            background: linear-gradient(45deg, #a52a2a, #dc143c);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        button:disabled {
+            background: #444;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+            border-color: #666;
+        }
+
+        .play-button-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        #playBtn {
+            background: transparent;
+            border: none;
+            padding: 0;
+            width: 200px;
+            height: 80px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        #playBtn img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        #playBtn:hover:not(:disabled) {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8);
+        }
+
+        #playBtn:active:not(:disabled) {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        #playBtn:disabled {
+            opacity: 0.6;
+            transform: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            color: #ffffff;
+        }
+
+        .result h2 {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .selected-square {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+
+        .selected-square .square {
+            width: 80px;
+            height: 80px;
+            font-size: 1.5rem;
+        }
+
+        .win-animation {
+            animation: winEffect 1.5s ease-out;
+        }
+
+        @keyframes winEffect {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.3); }
+            50% { transform: scale(1.1); }
+            75% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-label {
+            color: #ffffff;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .history {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            max-height: 150px;
+            overflow-y: auto;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .history h3 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .history-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .history-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+
+        .player-results {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .player-result {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+
+        .player-result-pawn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .player-result-pawn img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sound-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .sound-btn {
+            padding: 8px 15px;
+            background: rgba(10, 10, 40, 0.8);
+            border: 1px solid #ffffff;
+            border-radius: 20px;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .sound-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .jackpot-display {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            background: linear-gradient(45deg, #8b0000, #b22222);
+            border-radius: 10px;
+            border: 2px solid #ffffff;
+        }
+
+        .jackpot-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        .draw-animation-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            flex-direction: column;
+        }
+
+        .draw-animation-overlay.active {
+            display: flex;
+        }
+
+        .draw-number {
+            font-size: 8rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            animation: numberPulse 0.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes numberPulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .lose-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .lose-animation.active {
+            display: flex;
+        }
+
+        .lose-gif {
+            width: 400px;
+            height: 400px;
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.7);
+        }
+
+        .lose-gif img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .square {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .number {
+                font-size: 1rem;
+            }
+            
+            .casino-title {
+                font-size: 2.2rem;
+            }
+            
+            button {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+            
+            #playBtn {
+                width: 150px;
+                height: 60px;
+            }
+            
+            .player-pawn {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .sound-controls {
+                position: relative;
+                top: 0;
+                right: 0;
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+            
+            .decorative-gif {
+                display: none;
+            }
+            
+            .draw-number {
+                font-size: 5rem;
+            }
+            
+            .lose-gif {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .square {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .number {
+                font-size: 0.8rem;
+            }
+            
+            .game-container {
+                padding: 15px;
+            }
+            
+            .player-pawn {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .player-name {
+                font-size: 0.8rem;
+            }
+            
+            .casino-title {
+                font-size: 1.8rem;
+            }
+            
+            #playBtn {
+                width: 120px;
+                height: 50px;
+            }
+            
+            .draw-number {
+                font-size: 4rem;
+            }
+            
+            .lose-gif {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnJiMnhxZGxpb2pjcWY3eWprMXBrczdqYmE1N2N5MnR4b2R5ejR3aCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/qpzrAai4Hp6gw/giphy.gif" alt="Fond animé casino">
+    </div>
+
+    <div class="sound-controls">
+        <button class="sound-btn" id="muteBtn">🔊 Musique</button>
+        <button class="sound-btn" id="muteSfxBtn">🔊 SFX</button>
+    </div>
+
+    <!-- Animation de tirage -->
+    <div class="draw-animation-overlay" id="drawAnimation">
+        <div class="draw-number" id="drawNumber">1</div>
+        <div style="color: #ffffff; font-size: 1.5rem;">Tirage en cours...</div>
+    </div>
+
+    <!-- Animation de défaite -->
+    <div class="lose-animation" id="loseAnimation">
+        <div class="lose-gif">
+            <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Y2g5aG8xdGhqaXF1c2JzYngweWcxMTR5dml3dGF5Y2dwcTh4aGw0eiZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/eRbaGv50snOwMlvAFE/giphy.gif" alt="Défaite">
+        </div>
+    </div>
+
+    <div class="game-container">
+        <div class="casino-header">
+            <div class="casino-title">CASINO VIP</div>
+            <div class="casino-subtitle">Jeu de Sélection Exclusive</div>
+        </div>
+        
+        <div class="jackpot-display">
+            <div class="jackpot-text">🎰 JACKPOT EN JEU 🎰</div>
+        </div>
+        
+        <div class="players-section">
+            <div class="players-title">Sélectionnez votre pion VIP</div>
+            <div class="players-container" id="playersContainer">
+                <!-- Les pions seront générés par JavaScript -->
+            </div>
+        </div>
+        
+        <div class="game-board-container">
+            <div class="decorative-gif left">
+                <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cnoxMzJhaGlkbjltZDVoY3Y2Z3pnM2cyZXQzcXdwaHl6d2Nwb3F0dCZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/fAmddrRKCNBqNha10e/giphy.gif" alt="Décoratif gauche">
+            </div>
+            
+            <div class="game-board" id="gameBoard">
+                <!-- Les cases seront générées par JavaScript -->
+            </div>
+            
+            <div class="decorative-gif right">
+                <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Y2g5aG8xdGhqaXF1c2JzYngweWcxMTR5dml3dGF5Y2dwcTh4aGw0eiZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/eRbaGv50snOwMlvAFE/giphy.gif" alt="Décoratif droite">
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="resetBtn">RÉINITIALISER</button>
+            
+            <div class="play-button-container">
+                <button id="playBtn">
+                    <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3N3E3dHp4bjZzYnJpbHA0a2VmdDRvYWVpcnQ4dGxzcXJoaGNpanl3dyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/k2UMgJGEfy5jVpKJjF/giphy.gif" alt="JOUER">
+                </button>
+            </div>
+            
+            <button id="clearPawnsBtn">RETIRER LES PIONS</button>
+        </div>
+        
+        <div class="result" id="result">
+            <h2>RÉSULTAT</h2>
+            <p>Placez vos pions puis cliquez sur "JOUER" pour tenter votre chance</p>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-label">Parties</div>
+                <div class="stat-value" id="totalGames">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Gagnant</div>
+                <div class="stat-value" id="lastWinner">-</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Case</div>
+                <div class="stat-value" id="lastWinningSquare">-</div>
+            </div>
+        </div>
+        
+        <div class="history">
+            <h3>HISTORIQUE DES GAINS</h3>
+            <div class="history-list" id="historyList">
+                <!-- L'historique sera généré par JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Sons -->
+    <audio id="placeSound" preload="auto">
+        <source src="https://freesound.org/data/previews/86/86875_1561766-lq.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="playSound" preload="auto">
+        <source src="https://freesound.org/data/previews/86/86875_1561766-lq.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="winSound" preload="auto">
+        <source src="https://freesound.org/data/previews/86/86875_1561766-lq.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="loseSound" preload="auto">
+        <source src="https://freesound.org/data/previews/86/86875_1561766-lq.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Musique d'ambiance -->
+    <audio id="casinoMusic" loop preload="auto">
+        <source src="https://soundcloud.com/eroticjazzmusicensemble/v-i-p-poker-club-jazz?in=user-106356831/sets/ambiance-casino&si=6db8d846c65541bcb36d1d3a3aba138e&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Variables du jeu
+        let totalGames = 0;
+        let lastWinner = "-";
+        let lastWinningSquare = "-";
+        let gameHistory = [];
+        let selectedPlayer = null;
+        let pawnsOnBoard = {};
+        let soundsEnabled = true;
+        let musicEnabled = true;
+        let isDrawing = false;
+        
+        // Données des joueurs avec GIFs
+        const players = [
+            { 
+                id: 1, 
+                name: "High Roller", 
+                gif: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cDYzZGQwcWJmNjAycWJtd29mZWhqdnh2dmZlZncycHA3MHl6MjljZyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/lMr5FT3aHDnL13TLul/giphy.gif" 
+            },
+            { 
+                id: 2, 
+                name: "Lucky Star", 
+                gif: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eXE2a3BicHdxa24yeTFqbGM4YWJ0Mmd3ZmdrZ2J4bjlta2JpdTJuayZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/NQwKMPMbIpUmKVjUip/giphy.gif" 
+            },
+            { 
+                id: 3, 
+                name: "Diamond VIP", 
+                gif: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3YnVmNjByamsyem5sam1nZmg0Y21ycG41MGZteHd1ZWFiMGI3bW1oZiZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/WrICEdPpNuQO60igo6/giphy.gif" 
+            },
+            { 
+                id: 4, 
+                name: "Golden Ace", 
+                gif: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3MmhoMTRieHRvOHo3OG5mdnZ2bHYzNnB3dm4xdzRlNGY0cWM5NDRyMiZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/IaUi5RkflPRHnCPwZY/giphy.gif" 
+            },
+            { 
+                id: 5, 
+                name: "Royal Flush", 
+                gif: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZDltbmI1dW5zeDAyaDU3dHFkdXA1MGRkMnNjMGNtbmpnZjJkZHcwZSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/8qMWeJx6kIesw/giphy.gif" 
+            },
+            { 
+                id: 6, 
+                name: "Jackpot King", 
+                gif: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3b2FjaGlnNDBuZWowenpldzRpMnp0amV6Y2J4bmN5N2g5Njh1N3B2cSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/5C0fDFWjfTpVruZ8FT/giphy.gif" 
+            },
+            { 
+                id: 7, 
+                name: "Platinum Player", 
+                gif: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3YTYxZGozYWc4NWVybHk0M3oyODgwYXYzYjFuOTQ1azkwNDgxd2EwdiZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/J4z1NEJEDymVrubkNR/giphy.gif" 
+            },
+            { 
+                id: 8, 
+                name: "Casino Elite", 
+                gif: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzhpNnFxd2hjbWRlZmIxZGJtOXhmdzNmbGk4M2Nuc2RxbjNpeWo1cyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/HOrA3TBK5zA6JHBdi5/giphy.gif" 
+            }
+        ];
+        
+        // Éléments DOM
+        const gameBoard = document.getElementById('gameBoard');
+        const playersContainer = document.getElementById('playersContainer');
+        const playBtn = document.getElementById('playBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const clearPawnsBtn = document.getElementById('clearPawnsBtn');
+        const resultDiv = document.getElementById('result');
+        const totalGamesElement = document.getElementById('totalGames');
+        const lastWinnerElement = document.getElementById('lastWinner');
+        const lastWinningSquareElement = document.getElementById('lastWinningSquare');
+        const historyList = document.getElementById('historyList');
+        const muteBtn = document.getElementById('muteBtn');
+        const muteSfxBtn = document.getElementById('muteSfxBtn');
+        const drawAnimation = document.getElementById('drawAnimation');
+        const drawNumber = document.getElementById('drawNumber');
+        const loseAnimation = document.getElementById('loseAnimation');
+        
+        // Sons
+        const placeSound = document.getElementById('placeSound');
+        const playSound = document.getElementById('playSound');
+        const winSound = document.getElementById('winSound');
+        const loseSound = document.getElementById('loseSound');
+        const casinoMusic = document.getElementById('casinoMusic');
+        
+        // Fonctions pour les sons
+        function playPlaceSound() {
+            if (!soundsEnabled) return;
+            
+            try {
+                placeSound.currentTime = 0;
+                placeSound.volume = 0.3;
+                placeSound.play().catch(e => console.log("Erreur de lecture du son:", e));
+            } catch (error) {
+                console.log("Erreur avec le son de placement:", error);
+            }
+        }
+        
+        function playPlaySound() {
+            if (!soundsEnabled) return;
+            
+            try {
+                playSound.currentTime = 0;
+                playSound.volume = 0.5;
+                playSound.play().catch(e => console.log("Erreur de lecture du son:", e));
+            } catch (error) {
+                console.log("Erreur avec le son de jeu:", error);
+            }
+        }
+        
+        function playWinSound() {
+            if (!soundsEnabled) return;
+            
+            try {
+                winSound.currentTime = 0;
+                winSound.volume = 0.7;
+                winSound.play().catch(e => console.log("Erreur de lecture du son:", e));
+            } catch (error) {
+                console.log("Erreur avec le son de victoire:", error);
+            }
+        }
+        
+        function playLoseSound() {
+            if (!soundsEnabled) return;
+            
+            try {
+                loseSound.currentTime = 0;
+                loseSound.volume = 0.7;
+                loseSound.play().catch(e => console.log("Erreur de lecture du son:", e));
+            } catch (error) {
+                console.log("Erreur avec le son de défaite:", error);
+            }
+        }
+        
+        function toggleMusic() {
+            musicEnabled = !musicEnabled;
+            if (musicEnabled) {
+                casinoMusic.play().catch(e => console.log("Musique non jouée:", e));
+                muteBtn.textContent = "🔊 Musique";
+            } else {
+                casinoMusic.pause();
+                muteBtn.textContent = "🔇 Musique";
+            }
+        }
+        
+        function toggleSounds() {
+            soundsEnabled = !soundsEnabled;
+            muteSfxBtn.textContent = soundsEnabled ? "🔊 SFX" : "🔇 SFX";
+        }
+        
+        // Animation de tirage
+        function startDrawAnimation() {
+            if (isDrawing) return;
+            
+            isDrawing = true;
+            playBtn.disabled = true;
+            drawAnimation.classList.add('active');
+            
+            let currentNumber = 1;
+            const duration = 5000; // 5 secondes
+            const interval = 100; // Change le nombre toutes les 100ms
+            const steps = duration / interval;
+            let step = 0;
+            
+            const drawInterval = setInterval(() => {
+                // Calculer le prochain nombre (accélération vers la fin)
+                const progress = step / steps;
+                const speed = 1 + (progress * 10); // Accélération progressive
+                
+                currentNumber = (currentNumber + Math.floor(speed)) % 50 + 1;
+                drawNumber.textContent = currentNumber;
+                
+                // Mettre en surbrillance la case correspondante
+                highlightSquare(currentNumber);
+                
+                step++;
+                
+                if (step >= steps) {
+                    clearInterval(drawInterval);
+                    finishDraw(currentNumber);
+                }
+            }, interval);
+        }
+        
+        function highlightSquare(number) {
+            // Retirer la surbrillance de toutes les cases
+            document.querySelectorAll('.square').forEach(square => {
+                square.classList.remove('highlight');
+            });
+            
+            // Mettre en surbrillance la case actuelle
+            const currentSquare = document.querySelector(`.square[data-number="${number}"]`);
+            if (currentSquare) {
+                currentSquare.classList.add('highlight');
+            }
+        }
+        
+        function finishDraw(finalNumber) {
+            setTimeout(() => {
+                drawAnimation.classList.remove('active');
+                isDrawing = false;
+                playBtn.disabled = false;
+                
+                // Vérifier si un joueur a gagné
+                const playerId = pawnsOnBoard[finalNumber];
+                
+                if (playerId) {
+                    // Un joueur a gagné
+                    const player = players.find(p => p.id == playerId);
+                    displayWinResult(finalNumber, player);
+                    updateStats(finalNumber, player);
+                    addToHistory(finalNumber, player);
+                    playWinSound();
+                } else {
+                    // Personne n'a gagné
+                    displayLoseResult(finalNumber);
+                    playLoseSound();
+                    
+                    // Afficher l'animation de défaite
+                    loseAnimation.classList.add('active');
+                    setTimeout(() => {
+                        loseAnimation.classList.remove('active');
+                    }, 3000);
+                }
+            }, 1000);
+        }
+        
+        // Créer les pions joueurs
+        function createPlayerPawns() {
+            playersContainer.innerHTML = '';
+            
+            players.forEach(player => {
+                const playerElement = document.createElement('div');
+                playerElement.className = 'player';
+                
+                const pawnElement = document.createElement('div');
+                pawnElement.className = 'player-pawn';
+                pawnElement.dataset.playerId = player.id;
+                
+                const imgElement = document.createElement('img');
+                imgElement.src = player.gif;
+                imgElement.alt = player.name;
+                
+                const nameElement = document.createElement('div');
+                nameElement.className = 'player-name';
+                nameElement.textContent = player.name;
+                
+                pawnElement.appendChild(imgElement);
+                pawnElement.addEventListener('click', () => {
+                    selectPlayer(player.id);
+                });
+                
+                playerElement.appendChild(pawnElement);
+                playerElement.appendChild(nameElement);
+                playersContainer.appendChild(playerElement);
+            });
+        }
+        
+        // Sélectionner un joueur
+        function selectPlayer(playerId) {
+            document.querySelectorAll('.player-pawn.selected').forEach(pawn => {
+                pawn.classList.remove('selected');
+            });
+            
+            const selectedPawn = document.querySelector(`.player-pawn[data-player-id="${playerId}"]`);
+            selectedPawn.classList.add('selected');
+            
+            selectedPlayer = playerId;
+        }
+        
+        // Créer les 50 cases
+        function createSquares() {
+            gameBoard.innerHTML = '';
+            
+            for (let i = 1; i <= 50; i++) {
+                const square = document.createElement('div');
+                square.className = `square ${i % 2 === 0 ? 'gold' : 'platinum'}`;
+                square.dataset.number = i;
+                
+                square.innerHTML = `
+                    <div class="number">${i}</div>
+                `;
+                
+                square.addEventListener('click', () => {
+                    placePawnOnSquare(square);
+                });
+                
+                gameBoard.appendChild(square);
+            }
+            
+            updatePawnsDisplay();
+        }
+        
+        // Placer un pion sur une case
+        function placePawnOnSquare(square) {
+            if (!selectedPlayer) {
+                alert("Veuillez d'abord sélectionner un pion !");
+                return;
+            }
+            
+            const squareNumber = parseInt(square.dataset.number);
+            
+            if (pawnsOnBoard[squareNumber]) {
+                delete pawnsOnBoard[squareNumber];
+            } else {
+                pawnsOnBoard[squareNumber] = selectedPlayer;
+                playPlaceSound();
+            }
+            
+            updatePawnsDisplay();
+            updatePlayButtonState();
+        }
+        
+        // Mettre à jour l'affichage des pions sur le plateau
+        function updatePawnsDisplay() {
+            document.querySelectorAll('.pawn-on-square').forEach(pawn => {
+                pawn.remove();
+            });
+            
+            for (const [squareNumber, playerId] of Object.entries(pawnsOnBoard)) {
+                const square = document.querySelector(`.square[data-number="${squareNumber}"]`);
+                if (square) {
+                    const pawnElement = document.createElement('div');
+                    pawnElement.className = 'pawn-on-square';
+                    
+                    const imgElement = document.createElement('img');
+                    imgElement.src = players.find(p => p.id == playerId).gif;
+                    imgElement.alt = players.find(p => p.id == playerId).name;
+                    
+                    pawnElement.appendChild(imgElement);
+                    square.appendChild(pawnElement);
+                }
+            }
+        }
+        
+        // Mettre à jour l'état du bouton JOUER
+        function updatePlayButtonState() {
+            const hasPawns = Object.keys(pawnsOnBoard).length > 0;
+            playBtn.disabled = !hasPawns || isDrawing;
+            
+            if (!hasPawns) {
+                playBtn.title = "Placez au moins un pion pour jouer";
+            } else {
+                playBtn.title = "";
+            }
+        }
+        
+        // Afficher le résultat de victoire
+        function displayWinResult(number, player) {
+            resultDiv.innerHTML = `
+                <h2>FÉLICITATIONS!</h2>
+                <div class="selected-square">
+                    <div class="square ${number % 2 === 0 ? 'gold winning-gold' : 'platinum winning-platinum'} selected">
+                        <div class="number">${number}</div>
+                        <div class="pawn-on-square">
+                            <img src="${player.gif}" alt="${player.name}">
+                        </div>
+                    </div>
+                </div>
+                <div class="player-results">
+                    <div class="player-result">
+                        <div class="player-result-pawn">
+                            <img src="${player.gif}" alt="${player.name}">
+                        </div>
+                        <div style="font-size: 1.2rem; font-weight: bold; color: #ffffff;">${player.name} REMPORTE LA PARTIE!</div>
+                    </div>
+                </div>
+                <p style="margin-top: 10px; color: #ffffff;">Case ${number} sélectionnée</p>
+            `;
+        }
+        
+        // Afficher le résultat de défaite
+        function displayLoseResult(number) {
+            resultDiv.innerHTML = `
+                <h2 style="color: #ffffff;">DOMMAGE!</h2>
+                <div class="selected-square">
+                    <div class="square ${number % 2 === 0 ? 'gold' : 'platinum'}">
+                        <div class="number">${number}</div>
+                    </div>
+                </div>
+                <div class="player-results">
+                    <div style="font-size: 1.2rem; font-weight: bold; color: #ffffff;">
+                        Personne n'a gagné cette fois!
+                    </div>
+                </div>
+                <p style="margin-top: 10px; color: #ffffff;">Case ${number} sélectionnée - Aucun pion</p>
+            `;
+        }
+        
+        // Mettre à jour les statistiques
+        function updateStats(number, player) {
+            totalGames++;
+            totalGamesElement.textContent = totalGames;
+            
+            lastWinner = player.name;
+            lastWinnerElement.textContent = lastWinner;
+            
+            lastWinningSquare = number;
+            lastWinningSquareElement.textContent = lastWinningSquare;
+        }
+        
+        // Ajouter à l'historique
+        function addToHistory(number, player) {
+            const historyItem = document.createElement('div');
+            historyItem.className = 'history-item';
+            historyItem.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 30px; height: 30px; border-radius: 50%; overflow: hidden;">
+                        <img src="${player.gif}" alt="${player.name}" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div>
+                        <div style="color: #ffffff;">${player.name}</div>
+                        <div style="font-size: 0.8rem; color: #ffffff;">Case ${number}</div>
+                    </div>
+                </div>
+            `;
+            
+            historyList.appendChild(historyItem);
+            
+            if (historyList.children.length > 10) {
+                historyList.removeChild(historyList.firstChild);
+            }
+            
+            gameHistory.push({
+                number: number,
+                player: player,
+                timestamp: new Date().toLocaleTimeString()
+            });
+        }
+        
+        // Réinitialiser le jeu
+        function resetGame() {
+            totalGames = 0;
+            lastWinner = "-";
+            lastWinningSquare = "-";
+            gameHistory = [];
+            pawnsOnBoard = {};
+            selectedPlayer = null;
+            
+            totalGamesElement.textContent = totalGames;
+            lastWinnerElement.textContent = lastWinner;
+            lastWinningSquareElement.textContent = lastWinningSquare;
+            
+            historyList.innerHTML = '';
+            
+            resultDiv.innerHTML = `
+                <h2>RÉSULTAT</h2>
+                <p>Placez vos pions puis cliquez sur "JOUER" pour tenter votre chance</p>
+            `;
+            
+            document.querySelectorAll('.square.selected, .square.winning-gold, .square.winning-platinum').forEach(sq => {
+                sq.classList.remove('selected', 'winning-gold', 'winning-platinum');
+            });
+            
+            document.querySelectorAll('.player-pawn.selected').forEach(pawn => {
+                pawn.classList.remove('selected');
+            });
+            
+            createSquares();
+            updatePlayButtonState();
+        }
+        
+        // Retirer tous les pions
+        function clearAllPawns() {
+            pawnsOnBoard = {};
+            updatePawnsDisplay();
+            updatePlayButtonState();
+        }
+        
+        // Initialisation du jeu
+        function initGame() {
+            createPlayerPawns();
+            createSquares();
+            updatePlayButtonState();
+            
+            // Démarrer la musique
+            casinoMusic.volume = 0.5;
+            casinoMusic.play().catch(e => {
+                console.log("Musique non jouée automatiquement:", e);
+            });
+            
+            // Événements
+            playBtn.addEventListener('click', startDrawAnimation);
+            resetBtn.addEventListener('click', resetGame);
+            clearPawnsBtn.addEventListener('click', clearAllPawns);
+            muteBtn.addEventListener('click', toggleMusic);
+            muteSfxBtn.addEventListener('click', toggleSounds);
+            
+            // Raccourci clavier
+            document.addEventListener('keydown', (e) => {
+                if (e.key === ' ' || e.key === 'Enter') {
+                    e.preventDefault();
+                    if (!playBtn.disabled) {
+                        startDrawAnimation();
+                    }
+                }
+            });
+        }
+        
+        // Démarrer le jeu
+        initGame();
+    </script>
+</body>
+</html>
+deepseek_html_20251016_ca2d8c.html
+Affichage de deepseek_html_20251016_ca2d8c.html en cours...
