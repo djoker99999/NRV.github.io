@@ -53,17 +53,17 @@
         .casino-title {
             font-size: 4rem;
             font-weight: bold;
-            background: linear-gradient(45deg, #d4af37, #ffd700, #f0e68c);
+            background: linear-gradient(45deg, #ffffff, #f0f0f0, #e0e0e0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
             margin-bottom: 10px;
         }
 
         .casino-subtitle {
             font-size: 1.5rem;
-            color: #d4af37;
+            color: #ffffff;
             font-style: italic;
             margin-bottom: 20px;
         }
@@ -71,9 +71,9 @@
         .players-section {
             margin-bottom: 40px;
             padding: 25px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(139, 0, 0, 0.8);
             border-radius: 20px;
-            border: 2px solid rgba(212, 175, 55, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(10px);
         }
 
@@ -81,8 +81,8 @@
             text-align: center;
             margin-bottom: 20px;
             font-size: 1.8rem;
-            color: #ffd700;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
         .players-container {
@@ -118,9 +118,9 @@
         }
 
         .player-pawn.selected {
-            border: 4px solid #ffd700;
+            border: 4px solid #ffffff;
             transform: scale(1.15);
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.9);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
         }
 
         .player-name {
@@ -129,7 +129,7 @@
             max-width: 100px;
             overflow: hidden;
             text-overflow: ellipsis;
-            color: #f0e68c;
+            color: #ffffff;
             font-weight: bold;
         }
 
@@ -159,7 +159,7 @@
         }
 
         .jeton-value {
-            font-size: 0.9rem;
+            font-size: 1.2rem;
             font-weight: bold;
         }
 
@@ -182,7 +182,7 @@
             padding: 20px;
             background: rgba(0, 0, 0, 0.5);
             border-radius: 20px;
-            border: 2px solid rgba(212, 175, 55, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.5);
             position: relative;
             backdrop-filter: blur(5px);
         }
@@ -208,12 +208,12 @@
             width: 150px;
             height: 150px;
             border-radius: 15px;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
         }
 
         .square {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -276,7 +276,7 @@
 
         .square.selected {
             transform: scale(1.2);
-            box-shadow: 0 0 35px rgba(255, 215, 0, 1);
+            box-shadow: 0 0 35px rgba(255, 255, 255, 1);
             z-index: 10;
             animation: pulse 1s infinite;
         }
@@ -337,14 +337,14 @@
         }
 
         .number {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: bold;
         }
 
         .pawn-on-square {
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             top: 8px;
             right: 8px;
@@ -354,7 +354,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
+            font-size: 1rem;
             font-weight: bold;
         }
 
@@ -371,16 +371,19 @@
         .jeton-on-square-100 {
             background: linear-gradient(135deg, #c0c0c0, #808080);
             color: #000;
+            font-size: 1.1rem;
         }
 
         .jeton-on-square-500 {
             background: linear-gradient(135deg, #ffd700, #b8860b);
             color: #000;
+            font-size: 1.1rem;
         }
 
         .jeton-on-square-1000 {
             background: linear-gradient(135deg, #e5e4e2, #a0a0a0);
             color: #000;
+            font-size: 1.1rem;
         }
 
         .controls {
@@ -398,13 +401,13 @@
             border: none;
             border-radius: 50px;
             background: linear-gradient(45deg, #8b0000, #b22222);
-            color: #fff;
+            color: #ffffff;
             transition: all 0.3s ease;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
             text-transform: uppercase;
             font-weight: bold;
             letter-spacing: 1px;
-            border: 2px solid #d4af37;
+            border: 2px solid #ffffff;
         }
 
         button:hover {
@@ -468,22 +471,22 @@
             text-align: center;
             margin-top: 25px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(139, 0, 0, 0.8);
             border-radius: 20px;
             min-height: 120px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border: 2px solid rgba(212, 175, 55, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(10px);
         }
 
         .result h2 {
             margin-bottom: 15px;
-            color: #ffd700;
+            color: #ffffff;
             font-size: 2rem;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
         .selected-square {
@@ -517,9 +520,9 @@
             justify-content: space-around;
             margin-top: 25px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(139, 0, 0, 0.8);
             border-radius: 20px;
-            border: 2px solid rgba(212, 175, 55, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(10px);
         }
 
@@ -528,7 +531,7 @@
         }
 
         .stat-label {
-            color: #f0e68c;
+            color: #ffffff;
             font-size: 1.1rem;
             margin-bottom: 8px;
             font-weight: bold;
@@ -537,27 +540,27 @@
         .stat-value {
             font-size: 2.2rem;
             font-weight: bold;
-            color: #ffd700;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
         .history {
             margin-top: 25px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(139, 0, 0, 0.8);
             border-radius: 20px;
             max-height: 180px;
             overflow-y: auto;
-            border: 2px solid rgba(212, 175, 55, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(10px);
         }
 
         .history h3 {
             text-align: center;
             margin-bottom: 15px;
-            color: #ffd700;
+            color: #ffffff;
             font-size: 1.5rem;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
         .history-list {
@@ -568,11 +571,12 @@
         }
 
         .history-item {
-            background: rgba(212, 175, 55, 0.3);
+            background: rgba(255, 255, 255, 0.2);
             padding: 8px 15px;
             border-radius: 25px;
             font-size: 1rem;
-            border: 1px solid rgba(212, 175, 55, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: #ffffff;
         }
 
         .player-results {
@@ -587,21 +591,22 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.2);
             padding: 10px 15px;
             border-radius: 25px;
-            border: 1px solid rgba(212, 175, 55, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: #ffffff;
         }
 
         .player-result-pawn {
-            width: 35px;
-            height: 35px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             font-weight: bold;
         }
 
@@ -618,16 +623,19 @@
         .jeton-result-100 {
             background: linear-gradient(135deg, #c0c0c0, #808080);
             color: #000;
+            font-size: 1.1rem;
         }
 
         .jeton-result-500 {
             background: linear-gradient(135deg, #ffd700, #b8860b);
             color: #000;
+            font-size: 1.1rem;
         }
 
         .jeton-result-1000 {
             background: linear-gradient(135deg, #e5e4e2, #a0a0a0);
             color: #000;
+            font-size: 1.1rem;
         }
 
         .sound-controls {
@@ -641,17 +649,17 @@
 
         .sound-btn {
             padding: 10px 18px;
-            background: rgba(10, 10, 40, 0.9);
-            border: 2px solid #d4af37;
+            background: rgba(139, 0, 0, 0.9);
+            border: 2px solid #ffffff;
             border-radius: 25px;
-            color: #ffd700;
+            color: #ffffff;
             cursor: pointer;
             font-size: 1rem;
             font-weight: bold;
         }
 
         .sound-btn:hover {
-            background: rgba(212, 175, 55, 0.3);
+            background: rgba(255, 255, 255, 0.3);
         }
 
         .jackpot-display {
@@ -660,14 +668,14 @@
             padding: 15px;
             background: linear-gradient(45deg, #8b0000, #b22222);
             border-radius: 15px;
-            border: 3px solid #ffd700;
+            border: 3px solid #ffffff;
         }
 
         .jackpot-text {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #ffd700;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
         }
 
         .draw-animation-overlay {
@@ -691,8 +699,8 @@
         .draw-number {
             font-size: 10rem;
             font-weight: bold;
-            color: #ffd700;
-            text-shadow: 0 0 40px rgba(255, 215, 0, 0.9);
+            color: #ffffff;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
             margin-bottom: 40px;
             animation: numberPulse 0.5s ease-in-out infinite alternate;
         }
@@ -723,7 +731,7 @@
             width: 500px;
             height: 500px;
             border-radius: 25px;
-            box-shadow: 0 0 60px rgba(255, 0, 0, 0.8);
+            box-shadow: 0 0 60px rgba(255, 255, 255, 0.8);
         }
 
         .lose-gif img {
@@ -736,10 +744,10 @@
         /* Menu déroulant agrandi */
         .jeton-select {
             margin-top: 8px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             background: #333;
             color: white;
-            border: 2px solid #d4af37;
+            border: 2px solid #ffffff;
             border-radius: 8px;
             padding: 6px;
             width: 90px;
@@ -748,12 +756,12 @@
 
         @media (max-width: 768px) {
             .square {
-                width: 50px;
-                height: 50px;
+                width: 60px;
+                height: 60px;
             }
             
             .number {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
             }
             
             .casino-title {
@@ -799,12 +807,12 @@
 
         @media (max-width: 480px) {
             .square {
-                width: 40px;
-                height: 40px;
+                width: 50px;
+                height: 50px;
             }
             
             .number {
-                font-size: 0.9rem;
+                font-size: 1.1rem;
             }
             
             .game-container {
@@ -851,7 +859,7 @@
     <!-- Animation de tirage -->
     <div class="draw-animation-overlay" id="drawAnimation">
         <div class="draw-number" id="drawNumber">1</div>
-        <div style="color: #ffd700; font-size: 2rem;">Tirage en cours...</div>
+        <div style="color: #ffffff; font-size: 2rem;">Tirage en cours...</div>
     </div>
 
     <!-- Animation de défaite -->
@@ -1234,10 +1242,6 @@
                 pawnElement.className = `player-pawn ${player.colorClass}`;
                 pawnElement.dataset.playerId = player.id;
                 
-                const symbolElement = document.createElement('div');
-                symbolElement.className = 'player-symbol';
-                symbolElement.textContent = player.name.charAt(0);
-                
                 const valueElement = document.createElement('div');
                 valueElement.className = 'jeton-value';
                 valueElement.textContent = player.jeton.value;
@@ -1246,7 +1250,6 @@
                 nameElement.className = 'player-name';
                 nameElement.textContent = player.name;
                 
-                pawnElement.appendChild(symbolElement);
                 pawnElement.appendChild(valueElement);
                 
                 // Menu déroulant pour changer le jeton (agrandi)
@@ -1356,7 +1359,8 @@
                 const square = document.querySelector(`.square[data-number="${squareNumber}"]`);
                 if (square) {
                     const pawnElement = document.createElement('div');
-                    pawnElement.className = `pawn-on-square ${pawnData.playerColorClass}`;
+                    const jetonType = `jeton-on-square-${pawnData.jetonValue}`;
+                    pawnElement.className = `pawn-on-square ${jetonType}`;
                     pawnElement.textContent = pawnData.jetonValue;
                     
                     square.appendChild(pawnElement);
@@ -1383,38 +1387,38 @@
                 <div class="selected-square">
                     <div class="square ${number % 2 === 0 ? 'gold winning-gold' : 'platinum winning-platinum'} selected">
                         <div class="number">${number}</div>
-                        <div class="pawn-on-square ${player.pawnColorClass}">
+                        <div class="pawn-on-square jeton-on-square-${jetonValue}">
                             ${jetonValue}
                         </div>
                     </div>
                 </div>
                 <div class="player-results">
                     <div class="player-result">
-                        <div class="player-result-pawn ${player.resultColorClass}">
+                        <div class="player-result-pawn jeton-result-${jetonValue}">
                             ${jetonValue}
                         </div>
-                        <div style="font-size: 1.4rem; font-weight: bold; color: #ffd700;">${player.name} GAGNANT!</div>
+                        <div style="font-size: 1.4rem; font-weight: bold; color: #ffffff;">${player.name} GAGNANT!</div>
                     </div>
                 </div>
-                <p style="margin-top: 15px; color: #f0e68c; font-size: 1.1rem;">Case ${number} sélectionnée - Gains: ${jetonValue * 10}€</p>
+                <p style="margin-top: 15px; color: #ffffff; font-size: 1.1rem;">Case ${number} sélectionnée - Gains: ${jetonValue * 10}€</p>
             `;
         }
         
         // Afficher le résultat de défaite
         function displayLoseResult(number) {
             resultDiv.innerHTML = `
-                <h2 style="color: #ff6b6b;">DOMMAGE!</h2>
+                <h2 style="color: #ffffff;">DOMMAGE!</h2>
                 <div class="selected-square">
                     <div class="square ${number % 2 === 0 ? 'gold' : 'platinum'}">
                         <div class="number">${number}</div>
                     </div>
                 </div>
                 <div class="player-results">
-                    <div style="font-size: 1.4rem; font-weight: bold; color: #ff6b6b;">
+                    <div style="font-size: 1.4rem; font-weight: bold; color: #ffffff;">
                         Aucun joueur gagnant!
                     </div>
                 </div>
-                <p style="margin-top: 15px; color: #f0e68c; font-size: 1.1rem;">Case ${number} sélectionnée - Aucun jeton</p>
+                <p style="margin-top: 15px; color: #ffffff; font-size: 1.1rem;">Case ${number} sélectionnée - Aucun jeton</p>
             `;
         }
         
@@ -1436,12 +1440,12 @@
             historyItem.className = 'history-item';
             historyItem.innerHTML = `
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <div class="player-result-pawn ${player.resultColorClass}" style="width: 35px; height: 35px;">
+                    <div class="player-result-pawn jeton-result-${jetonValue}" style="width: 40px; height: 40px;">
                         ${jetonValue}
                     </div>
                     <div>
-                        <div style="color: #ffd700; font-size: 1rem;">${player.name}</div>
-                        <div style="font-size: 0.9rem; color: #f0e68c;">Case ${number} - Gains: ${jetonValue * 10}€</div>
+                        <div style="color: #ffffff; font-size: 1rem;">${player.name}</div>
+                        <div style="font-size: 0.9rem; color: #ffffff;">Case ${number} - Gains: ${jetonValue * 10}€</div>
                     </div>
                 </div>
             `;
