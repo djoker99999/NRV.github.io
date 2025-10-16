@@ -1,41 +1,3 @@
-Aucun élément sélectionné 
-
-Aller au contenu
-Utiliser Gmail avec un lecteur d'écran
-Conversations
-moi
-(aucun objet)
- 
-Pièce jointe :
-deepseek_html_20251016_ca2d8c.html
-moi
-(aucun objet)
- 
-Pièce jointe :
-deepseek_html_20251016_d7e6d0.html
-20:25
-moi
-(aucun objet)
- 
-Pièce jointe :
-deepseek_html_20251016_403c12.html
-20:17
-moi
-(aucun objet)
- 
-Pièce jointe :
-deepseek_html_20251016_b61b1f-2.html
-18:42
-69 % sur 100 Go utilisés
-Conditions d'utilisation · Confidentialité · Règlement du programme
-Dernière activité sur le compte : il y a 0 minute
-Actuellement en cours d'utilisation depuis 3 autres endroits · Détails
-Nouveau message :
-Nouveau message
-RéduireFenêtre externeFermer
-À
-Objet
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -96,17 +58,17 @@ Objet
         .casino-title {
             font-size: 3rem;
             font-weight: bold;
-            background: linear-gradient(45deg, #ffffff, #f0f0f0, #e0e0e0);
+            background: linear-gradient(45deg, #d4af37, #ffd700, #f0e68c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
             margin-bottom: 5px;
         }
 
         .casino-subtitle {
             font-size: 1.2rem;
-            color: #ffffff;
+            color: #d4af37;
             font-style: italic;
             margin-bottom: 20px;
         }
@@ -116,7 +78,7 @@ Objet
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             backdrop-filter: blur(5px);
         }
 
@@ -124,7 +86,7 @@ Objet
             text-align: center;
             margin-bottom: 15px;
             font-size: 1.5rem;
-            color: #ffffff;
+            color: #ffd700;
         }
 
         .players-container {
@@ -152,21 +114,17 @@ Objet
             border: 2px solid transparent;
             overflow: hidden;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-
-        .player-pawn img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
+            font-weight: bold;
+            font-size: 0.8rem;
         }
 
         .player-pawn.selected {
-            border: 3px solid #ffffff;
+            border: 3px solid #ffd700;
             transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
         }
 
         .player-name {
@@ -175,7 +133,33 @@ Objet
             max-width: 80px;
             overflow: hidden;
             text-overflow: ellipsis;
-            color: #ffffff;
+            color: #f0e68c;
+        }
+
+        .jeton-100 {
+            background: linear-gradient(135deg, #c0c0c0, #808080);
+            color: #000;
+        }
+
+        .jeton-500 {
+            background: linear-gradient(135deg, #ffd700, #b8860b);
+            color: #000;
+        }
+
+        .jeton-1000 {
+            background: linear-gradient(135deg, #e5e4e2, #a0a0a0);
+            color: #000;
+        }
+
+        .jeton-value {
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .player-letter {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 2px;
         }
 
         .game-board-container {
@@ -191,7 +175,7 @@ Objet
             padding: 15px;
             background: rgba(0, 0, 0, 0.4);
             border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             position: relative;
             backdrop-filter: blur(3px);
         }
@@ -217,7 +201,7 @@ Objet
             width: 120px;
             height: 120px;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
         }
 
         .square {
@@ -235,7 +219,6 @@ Objet
             position: relative;
             overflow: hidden;
             animation: float 3s ease-in-out infinite;
-            color: #ffffff;
         }
 
         .square:nth-child(odd) {
@@ -267,13 +250,13 @@ Objet
 
         .square.gold {
             background: linear-gradient(135deg, #d4af37, #b8860b);
-            color: #ffffff;
+            color: #000;
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
         }
 
         .square.platinum {
             background: linear-gradient(135deg, #e5e4e2, #b6b6b4);
-            color: #ffffff;
+            color: #000;
             box-shadow: 0 0 15px rgba(229, 228, 226, 0.7);
         }
 
@@ -286,7 +269,7 @@ Objet
 
         .square.selected {
             transform: scale(1.15);
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
             z-index: 10;
             animation: pulse 1s infinite;
         }
@@ -330,8 +313,8 @@ Objet
                 background: linear-gradient(135deg, #d4af37, #b8860b);
             }
             100% { 
-                box-shadow: 0 0 40px rgba(255, 255, 255, 1);
-                background: linear-gradient(135deg, #ffffff, #d4af37);
+                box-shadow: 0 0 40px rgba(255, 215, 0, 1);
+                background: linear-gradient(135deg, #ffd700, #d4af37);
             }
         }
 
@@ -349,7 +332,6 @@ Objet
         .number {
             font-size: 1.2rem;
             font-weight: bold;
-            color: #ffffff;
         }
 
         .pawn-on-square {
@@ -362,12 +344,26 @@ Objet
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.5);
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            font-weight: bold;
         }
 
-        .pawn-on-square img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .jeton-on-square-100 {
+            background: linear-gradient(135deg, #c0c0c0, #808080);
+            color: #000;
+        }
+
+        .jeton-on-square-500 {
+            background: linear-gradient(135deg, #ffd700, #b8860b);
+            color: #000;
+        }
+
+        .jeton-on-square-1000 {
+            background: linear-gradient(135deg, #e5e4e2, #a0a0a0);
+            color: #000;
         }
 
         .controls {
@@ -385,13 +381,13 @@ Objet
             border: none;
             border-radius: 50px;
             background: linear-gradient(45deg, #8b0000, #b22222);
-            color: #ffffff;
+            color: #fff;
             transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
             text-transform: uppercase;
             font-weight: bold;
             letter-spacing: 1px;
-            border: 1px solid #ffffff;
+            border: 1px solid #d4af37;
         }
 
         button:hover {
@@ -462,14 +458,13 @@ Objet
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             backdrop-filter: blur(5px);
-            color: #ffffff;
         }
 
         .result h2 {
             margin-bottom: 10px;
-            color: #ffffff;
+            color: #ffd700;
         }
 
         .selected-square {
@@ -505,7 +500,7 @@ Objet
             padding: 15px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             backdrop-filter: blur(5px);
         }
 
@@ -514,7 +509,7 @@ Objet
         }
 
         .stat-label {
-            color: #ffffff;
+            color: #f0e68c;
             font-size: 0.9rem;
             margin-bottom: 5px;
         }
@@ -522,7 +517,7 @@ Objet
         .stat-value {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #ffffff;
+            color: #ffd700;
         }
 
         .history {
@@ -532,14 +527,14 @@ Objet
             border-radius: 15px;
             max-height: 150px;
             overflow-y: auto;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             backdrop-filter: blur(5px);
         }
 
         .history h3 {
             text-align: center;
             margin-bottom: 10px;
-            color: #ffffff;
+            color: #ffd700;
         }
 
         .history-list {
@@ -550,12 +545,11 @@ Objet
         }
 
         .history-item {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(212, 175, 55, 0.2);
             padding: 5px 10px;
             border-radius: 20px;
             font-size: 0.9rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #ffffff;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .player-results {
@@ -573,8 +567,7 @@ Objet
             background: rgba(255, 255, 255, 0.1);
             padding: 8px 12px;
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #ffffff;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .player-result-pawn {
@@ -582,12 +575,26 @@ Objet
             height: 30px;
             border-radius: 50%;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
         }
 
-        .player-result-pawn img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .jeton-result-100 {
+            background: linear-gradient(135deg, #c0c0c0, #808080);
+            color: #000;
+        }
+
+        .jeton-result-500 {
+            background: linear-gradient(135deg, #ffd700, #b8860b);
+            color: #000;
+        }
+
+        .jeton-result-1000 {
+            background: linear-gradient(135deg, #e5e4e2, #a0a0a0);
+            color: #000;
         }
 
         .sound-controls {
@@ -602,15 +609,15 @@ Objet
         .sound-btn {
             padding: 8px 15px;
             background: rgba(10, 10, 40, 0.8);
-            border: 1px solid #ffffff;
+            border: 1px solid #d4af37;
             border-radius: 20px;
-            color: #ffffff;
+            color: #ffd700;
             cursor: pointer;
             font-size: 0.9rem;
         }
 
         .sound-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(212, 175, 55, 0.2);
         }
 
         .jackpot-display {
@@ -619,14 +626,14 @@ Objet
             padding: 10px;
             background: linear-gradient(45deg, #8b0000, #b22222);
             border-radius: 10px;
-            border: 2px solid #ffffff;
+            border: 2px solid #ffd700;
         }
 
         .jackpot-text {
             font-size: 1.2rem;
             font-weight: bold;
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
         }
 
         .draw-animation-overlay {
@@ -650,8 +657,8 @@ Objet
         .draw-number {
             font-size: 8rem;
             font-weight: bold;
-            color: #ffffff;
-            text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+            color: #ffd700;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
             margin-bottom: 30px;
             animation: numberPulse 0.5s ease-in-out infinite alternate;
         }
@@ -682,7 +689,7 @@ Objet
             width: 400px;
             height: 400px;
             border-radius: 20px;
-            box-shadow: 0 0 50px rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 50px rgba(255, 0, 0, 0.7);
         }
 
         .lose-gif img {
@@ -788,7 +795,7 @@ Objet
 </head>
 <body>
     <div class="background-animation">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnJiMnhxZGxpb2pjcWY3eWprMXBrczdqYmE1N2N5MnR4b2R5ejR3aCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/qpzrAai4Hp6gw/giphy.gif" alt="Fond animé casino">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnJiMnhxZGxpb2pjcWY3eWprMXBrczdqYmE1N2N5MnR4b2R5ejR3aCZlcD12MV9naWZzX3NlYXJjaCZjdT1n/qpzrAai4Hp6gw/giphy.gif" alt="Fond animé casino">
     </div>
 
     <div class="sound-controls">
@@ -799,7 +806,7 @@ Objet
     <!-- Animation de tirage -->
     <div class="draw-animation-overlay" id="drawAnimation">
         <div class="draw-number" id="drawNumber">1</div>
-        <div style="color: #ffffff; font-size: 1.5rem;">Tirage en cours...</div>
+        <div style="color: #ffd700; font-size: 1.5rem;">Tirage en cours...</div>
     </div>
 
     <!-- Animation de défaite -->
@@ -820,9 +827,9 @@ Objet
         </div>
         
         <div class="players-section">
-            <div class="players-title">Sélectionnez votre pion VIP</div>
+            <div class="players-title">Sélectionnez votre jeton</div>
             <div class="players-container" id="playersContainer">
-                <!-- Les pions seront générés par JavaScript -->
+                <!-- Les jetons seront générés par JavaScript -->
             </div>
         </div>
         
@@ -849,12 +856,12 @@ Objet
                 </button>
             </div>
             
-            <button id="clearPawnsBtn">RETIRER LES PIONS</button>
+            <button id="clearPawnsBtn">RETIRER LES JETONS</button>
         </div>
         
         <div class="result" id="result">
             <h2>RÉSULTAT</h2>
-            <p>Placez vos pions puis cliquez sur "JOUER" pour tenter votre chance</p>
+            <p>Placez vos jetons puis cliquez sur "JOUER" pour tenter votre chance</p>
         </div>
         
         <div class="stats">
@@ -882,7 +889,7 @@ Objet
 
     <!-- Sons -->
     <audio id="placeSound" preload="auto">
-        <source src="https://freesound.org/data/previews/86/86875_1561766-lq.mp3" type="audio/mpeg">
+        <source src="https://files.catbox.moe/j5u0gd.wav" type="audio/wav">
     </audio>
     <audio id="playSound" preload="auto">
         <source src="https://freesound.org/data/previews/86/86875_1561766-lq.mp3" type="audio/mpeg">
@@ -896,7 +903,7 @@ Objet
     
     <!-- Musique d'ambiance -->
     <audio id="casinoMusic" loop preload="auto">
-        <source src="https://soundcloud.com/eroticjazzmusicensemble/v-i-p-poker-club-jazz?in=user-106356831/sets/ambiance-casino&si=6db8d846c65541bcb36d1d3a3aba138e&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" type="audio/mpeg">
+        <source src="https://files.catbox.moe/1ehdxt.mp3" type="audio/mpeg">
     </audio>
 
     <script>
@@ -911,48 +918,63 @@ Objet
         let musicEnabled = true;
         let isDrawing = false;
         
-        // Données des joueurs avec GIFs
+        // Données des joueurs avec leurs jetons
         const players = [
             { 
                 id: 1, 
-                name: "High Roller", 
-                gif: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cDYzZGQwcWJmNjAycWJtd29mZWhqdnh2dmZlZncycHA3MHl6MjljZyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/lMr5FT3aHDnL13TLul/giphy.gif" 
+                name: "Joueur A", 
+                letter: "A",
+                jeton: { value: 100, type: "jeton-100" }
             },
             { 
                 id: 2, 
-                name: "Lucky Star", 
-                gif: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eXE2a3BicHdxa24yeTFqbGM4YWJ0Mmd3ZmdrZ2J4bjlta2JpdTJuayZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/NQwKMPMbIpUmKVjUip/giphy.gif" 
+                name: "Joueur B", 
+                letter: "B",
+                jeton: { value: 100, type: "jeton-100" }
             },
             { 
                 id: 3, 
-                name: "Diamond VIP", 
-                gif: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3YnVmNjByamsyem5sam1nZmg0Y21ycG41MGZteHd1ZWFiMGI3bW1oZiZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/WrICEdPpNuQO60igo6/giphy.gif" 
+                name: "Joueur C", 
+                letter: "C",
+                jeton: { value: 100, type: "jeton-100" }
             },
             { 
                 id: 4, 
-                name: "Golden Ace", 
-                gif: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3MmhoMTRieHRvOHo3OG5mdnZ2bHYzNnB3dm4xdzRlNGY0cWM5NDRyMiZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/IaUi5RkflPRHnCPwZY/giphy.gif" 
+                name: "Joueur D", 
+                letter: "D",
+                jeton: { value: 100, type: "jeton-100" }
             },
             { 
                 id: 5, 
-                name: "Royal Flush", 
-                gif: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZDltbmI1dW5zeDAyaDU3dHFkdXA1MGRkMnNjMGNtbmpnZjJkZHcwZSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/8qMWeJx6kIesw/giphy.gif" 
+                name: "Joueur E", 
+                letter: "E",
+                jeton: { value: 100, type: "jeton-100" }
             },
             { 
                 id: 6, 
-                name: "Jackpot King", 
-                gif: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3b2FjaGlnNDBuZWowenpldzRpMnp0amV6Y2J4bmN5N2g5Njh1N3B2cSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/5C0fDFWjfTpVruZ8FT/giphy.gif" 
+                name: "Joueur F", 
+                letter: "F",
+                jeton: { value: 100, type: "jeton-100" }
             },
             { 
                 id: 7, 
-                name: "Platinum Player", 
-                gif: "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3YTYxZGozYWc4NWVybHk0M3oyODgwYXYzYjFuOTQ1azkwNDgxd2EwdiZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/J4z1NEJEDymVrubkNR/giphy.gif" 
+                name: "Joueur G", 
+                letter: "G",
+                jeton: { value: 100, type: "jeton-100" }
             },
             { 
                 id: 8, 
-                name: "Casino Elite", 
-                gif: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzhpNnFxd2hjbWRlZmIxZGJtOXhmdzNmbGk4M2Nuc2RxbjNpeWo1cyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/HOrA3TBK5zA6JHBdi5/giphy.gif" 
+                name: "Joueur H", 
+                letter: "H",
+                jeton: { value: 100, type: "jeton-100" }
             }
+        ];
+
+        // Types de jetons disponibles
+        const jetonTypes = [
+            { value: 100, type: "jeton-100", name: "100" },
+            { value: 500, type: "jeton-500", name: "500" },
+            { value: 1000, type: "jeton-1000", name: "1000" }
         ];
         
         // Éléments DOM
@@ -1098,14 +1120,14 @@ Objet
                 playBtn.disabled = false;
                 
                 // Vérifier si un joueur a gagné
-                const playerId = pawnsOnBoard[finalNumber];
+                const pawnData = pawnsOnBoard[finalNumber];
                 
-                if (playerId) {
+                if (pawnData) {
                     // Un joueur a gagné
-                    const player = players.find(p => p.id == playerId);
-                    displayWinResult(finalNumber, player);
-                    updateStats(finalNumber, player);
-                    addToHistory(finalNumber, player);
+                    const player = players.find(p => p.id == pawnData.playerId);
+                    displayWinResult(finalNumber, player, pawnData.jetonValue);
+                    updateStats(finalNumber, player, pawnData.jetonValue);
+                    addToHistory(finalNumber, player, pawnData.jetonValue);
                     playWinSound();
                 } else {
                     // Personne n'a gagné
@@ -1130,23 +1152,62 @@ Objet
                 playerElement.className = 'player';
                 
                 const pawnElement = document.createElement('div');
-                pawnElement.className = 'player-pawn';
+                pawnElement.className = `player-pawn ${player.jeton.type}`;
                 pawnElement.dataset.playerId = player.id;
                 
-                const imgElement = document.createElement('img');
-                imgElement.src = player.gif;
-                imgElement.alt = player.name;
+                const letterElement = document.createElement('div');
+                letterElement.className = 'player-letter';
+                letterElement.textContent = player.letter;
+                
+                const valueElement = document.createElement('div');
+                valueElement.className = 'jeton-value';
+                valueElement.textContent = player.jeton.value;
                 
                 const nameElement = document.createElement('div');
                 nameElement.className = 'player-name';
                 nameElement.textContent = player.name;
                 
-                pawnElement.appendChild(imgElement);
+                pawnElement.appendChild(letterElement);
+                pawnElement.appendChild(valueElement);
+                
+                // Menu déroulant pour changer le jeton
+                const selectElement = document.createElement('select');
+                selectElement.style.marginTop = '5px';
+                selectElement.style.fontSize = '0.7rem';
+                selectElement.style.background = '#333';
+                selectElement.style.color = 'white';
+                selectElement.style.border = '1px solid #d4af37';
+                selectElement.style.borderRadius = '5px';
+                selectElement.style.padding = '2px';
+                
+                jetonTypes.forEach(jeton => {
+                    const option = document.createElement('option');
+                    option.value = jeton.value;
+                    option.textContent = jeton.name;
+                    option.selected = jeton.value === player.jeton.value;
+                    selectElement.appendChild(option);
+                });
+                
+                selectElement.addEventListener('change', (e) => {
+                    const newValue = parseInt(e.target.value);
+                    const newJeton = jetonTypes.find(j => j.value === newValue);
+                    player.jeton.value = newValue;
+                    player.jeton.type = newJeton.type;
+                    
+                    // Mettre à jour l'affichage du jeton
+                    pawnElement.className = `player-pawn ${newJeton.type}`;
+                    valueElement.textContent = newValue;
+                    
+                    // Mettre à jour les jetons sur le plateau
+                    updatePawnsDisplay();
+                });
+                
                 pawnElement.addEventListener('click', () => {
                     selectPlayer(player.id);
                 });
                 
                 playerElement.appendChild(pawnElement);
+                playerElement.appendChild(selectElement);
                 playerElement.appendChild(nameElement);
                 playersContainer.appendChild(playerElement);
             });
@@ -1190,16 +1251,21 @@ Objet
         // Placer un pion sur une case
         function placePawnOnSquare(square) {
             if (!selectedPlayer) {
-                alert("Veuillez d'abord sélectionner un pion !");
+                alert("Veuillez d'abord sélectionner un joueur !");
                 return;
             }
             
             const squareNumber = parseInt(square.dataset.number);
+            const player = players.find(p => p.id == selectedPlayer);
             
             if (pawnsOnBoard[squareNumber]) {
                 delete pawnsOnBoard[squareNumber];
             } else {
-                pawnsOnBoard[squareNumber] = selectedPlayer;
+                pawnsOnBoard[squareNumber] = {
+                    playerId: selectedPlayer,
+                    jetonValue: player.jeton.value,
+                    playerLetter: player.letter
+                };
                 playPlaceSound();
             }
             
@@ -1213,17 +1279,14 @@ Objet
                 pawn.remove();
             });
             
-            for (const [squareNumber, playerId] of Object.entries(pawnsOnBoard)) {
+            for (const [squareNumber, pawnData] of Object.entries(pawnsOnBoard)) {
                 const square = document.querySelector(`.square[data-number="${squareNumber}"]`);
                 if (square) {
                     const pawnElement = document.createElement('div');
-                    pawnElement.className = 'pawn-on-square';
+                    const jetonType = `jeton-on-square-${pawnData.jetonValue}`;
+                    pawnElement.className = `pawn-on-square ${jetonType}`;
+                    pawnElement.textContent = `${pawnData.playerLetter}${pawnData.jetonValue}`;
                     
-                    const imgElement = document.createElement('img');
-                    imgElement.src = players.find(p => p.id == playerId).gif;
-                    imgElement.alt = players.find(p => p.id == playerId).name;
-                    
-                    pawnElement.appendChild(imgElement);
                     square.appendChild(pawnElement);
                 }
             }
@@ -1235,60 +1298,60 @@ Objet
             playBtn.disabled = !hasPawns || isDrawing;
             
             if (!hasPawns) {
-                playBtn.title = "Placez au moins un pion pour jouer";
+                playBtn.title = "Placez au moins un jeton pour jouer";
             } else {
                 playBtn.title = "";
             }
         }
         
         // Afficher le résultat de victoire
-        function displayWinResult(number, player) {
+        function displayWinResult(number, player, jetonValue) {
             resultDiv.innerHTML = `
                 <h2>FÉLICITATIONS!</h2>
                 <div class="selected-square">
                     <div class="square ${number % 2 === 0 ? 'gold winning-gold' : 'platinum winning-platinum'} selected">
                         <div class="number">${number}</div>
-                        <div class="pawn-on-square">
-                            <img src="${player.gif}" alt="${player.name}">
+                        <div class="pawn-on-square jeton-on-square-${jetonValue}">
+                            ${player.letter}${jetonValue}
                         </div>
                     </div>
                 </div>
                 <div class="player-results">
                     <div class="player-result">
-                        <div class="player-result-pawn">
-                            <img src="${player.gif}" alt="${player.name}">
+                        <div class="player-result-pawn jeton-result-${jetonValue}">
+                            ${player.letter}${jetonValue}
                         </div>
-                        <div style="font-size: 1.2rem; font-weight: bold; color: #ffffff;">${player.name} REMPORTE LA PARTIE!</div>
+                        <div style="font-size: 1.2rem; font-weight: bold; color: #ffd700;">${player.name} GAGNANT!</div>
                     </div>
                 </div>
-                <p style="margin-top: 10px; color: #ffffff;">Case ${number} sélectionnée</p>
+                <p style="margin-top: 10px; color: #f0e68c;">Case ${number} sélectionnée - Gains: ${jetonValue * 10}€</p>
             `;
         }
         
         // Afficher le résultat de défaite
         function displayLoseResult(number) {
             resultDiv.innerHTML = `
-                <h2 style="color: #ffffff;">DOMMAGE!</h2>
+                <h2 style="color: #ff6b6b;">DOMMAGE!</h2>
                 <div class="selected-square">
                     <div class="square ${number % 2 === 0 ? 'gold' : 'platinum'}">
                         <div class="number">${number}</div>
                     </div>
                 </div>
                 <div class="player-results">
-                    <div style="font-size: 1.2rem; font-weight: bold; color: #ffffff;">
-                        Personne n'a gagné cette fois!
+                    <div style="font-size: 1.2rem; font-weight: bold; color: #ff6b6b;">
+                        Aucun joueur gagnant!
                     </div>
                 </div>
-                <p style="margin-top: 10px; color: #ffffff;">Case ${number} sélectionnée - Aucun pion</p>
+                <p style="margin-top: 10px; color: #f0e68c;">Case ${number} sélectionnée - Aucun jeton</p>
             `;
         }
         
         // Mettre à jour les statistiques
-        function updateStats(number, player) {
+        function updateStats(number, player, jetonValue) {
             totalGames++;
             totalGamesElement.textContent = totalGames;
             
-            lastWinner = player.name;
+            lastWinner = `${player.letter}${jetonValue}`;
             lastWinnerElement.textContent = lastWinner;
             
             lastWinningSquare = number;
@@ -1296,17 +1359,17 @@ Objet
         }
         
         // Ajouter à l'historique
-        function addToHistory(number, player) {
+        function addToHistory(number, player, jetonValue) {
             const historyItem = document.createElement('div');
             historyItem.className = 'history-item';
             historyItem.innerHTML = `
                 <div style="display: flex; align-items: center; gap: 8px;">
-                    <div style="width: 30px; height: 30px; border-radius: 50%; overflow: hidden;">
-                        <img src="${player.gif}" alt="${player.name}" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="player-result-pawn jeton-result-${jetonValue}" style="width: 30px; height: 30px;">
+                        ${player.letter}${jetonValue}
                     </div>
                     <div>
-                        <div style="color: #ffffff;">${player.name}</div>
-                        <div style="font-size: 0.8rem; color: #ffffff;">Case ${number}</div>
+                        <div style="color: #ffd700;">${player.name}</div>
+                        <div style="font-size: 0.8rem; color: #f0e68c;">Case ${number} - Gains: ${jetonValue * 10}€</div>
                     </div>
                 </div>
             `;
@@ -1320,6 +1383,7 @@ Objet
             gameHistory.push({
                 number: number,
                 player: player,
+                jetonValue: jetonValue,
                 timestamp: new Date().toLocaleTimeString()
             });
         }
@@ -1341,7 +1405,7 @@ Objet
             
             resultDiv.innerHTML = `
                 <h2>RÉSULTAT</h2>
-                <p>Placez vos pions puis cliquez sur "JOUER" pour tenter votre chance</p>
+                <p>Placez vos jetons puis cliquez sur "JOUER" pour tenter votre chance</p>
             `;
             
             document.querySelectorAll('.square.selected, .square.winning-gold, .square.winning-platinum').forEach(sq => {
@@ -1398,5 +1462,3 @@ Objet
     </script>
 </body>
 </html>
-deepseek_html_20251016_ca2d8c.html
-Affichage de deepseek_html_20251016_ca2d8c.html en cours...
